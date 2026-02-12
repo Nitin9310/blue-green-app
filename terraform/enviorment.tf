@@ -6,6 +6,12 @@ resource "aws_elastic_beanstalk_environment" "blue" {
   application         = aws_elastic_beanstalk_application.app.name
   solution_stack_name = "64bit Amazon Linux 2023 v6.7.3 running Node.js 20" 
 
+
+setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "LoadBalancerType"
+    value     = "application"
+  }
   # --- NETWORK SETTINGS (NEW) ---
   setting {
     namespace = "aws:ec2:vpc"
@@ -52,6 +58,12 @@ resource "aws_elastic_beanstalk_environment" "green" {
   application         = aws_elastic_beanstalk_application.app.name
   solution_stack_name = "64bit Amazon Linux 2023 v6.7.3 running Node.js 20"
 
+
+setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "LoadBalancerType"
+    value     = "application"
+  }
   # --- NETWORK SETTINGS (NEW) ---
   setting {
     namespace = "aws:ec2:vpc"
