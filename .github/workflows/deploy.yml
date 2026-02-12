@@ -39,6 +39,6 @@ jobs:
       run: |
         echo "Deploy successful. Swapping CNAMES..."
         aws elasticbeanstalk swap-environment-cnames \
-          --source-environment-name bg-demo-blue \
-          --destination-environment-name bg-demo-green
+          --source-environment-name bg-demo-green \
+          --destination-environment-name bg-demo-blue
         echo "Swap complete! bg-demo-green is now LIVE."
