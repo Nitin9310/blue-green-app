@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
     // app/index.js
 res.send(`
-    <body style="background-color: #e0ffe0; font-family: sans-serif;">
+    <body style="background-color: #e0ecff; font-family: sans-serif;">
        <h1>new version</h1>
         <h1>🚀 Hello from the AUTOMATED Version!</h1>
         <p>This was deployed via GitHub Actions.</p>
