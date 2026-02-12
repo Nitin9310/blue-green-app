@@ -24,7 +24,7 @@ jobs:
         application_name: blue-green-demo  # Must match Terraform
         environment_name: bg-demo-green    # We always deploy to Green first
         version_label: "ver-${{ github.sha }}"
-        region: us-east-1
+        region: ap-south-1
         deployment_package: deploy.zip
 
     - name: Swap Blue and Green
