@@ -14,15 +14,17 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Generate Deployment Package
-      run: zip -r deploy.zip . -x "*.git*" "node_modules/*"
+      run: |
+       cd app
+       zip -r deploy.zip . -x "*.git*" "node_modules/*"
 
     - name: Deploy to Green Environment
       uses: einaregilsson/beanstalk-deploy@v21
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: blue-green-demo  # Must match Terraform
-        environment_name: bg-demo-green    # We always deploy to Green first
+        application_name: blue-green-demo  
+        environment_name: bg-demo-green    
         version_label: "ver-${{ github.sha }}"
         region: ap-south-1
         deployment_package: deploy.zip
