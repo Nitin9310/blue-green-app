@@ -16,7 +16,9 @@ jobs:
     - name: Generate Deployment Package
       run: |
        cd app
-       zip -r deploy.zip . -x "*.git*" "node_modules/*"
+        zip -r ../deploy.zip . -x "*.git*" "node_modules/*"
+        echo "Zip file created at:"
+        ls -l ../deploy.zip
 
     - name: Deploy to Green Environment
       uses: einaregilsson/beanstalk-deploy@v21
