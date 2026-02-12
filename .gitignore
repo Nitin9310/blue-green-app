@@ -1,0 +1,16 @@
+# .gitignore
+
+# Terraform heavy binaries and state
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Node dependencies
+node_modules/
+
+# Mac system files
+.DS_Store
+
+# Zipped packages
+*.zip
