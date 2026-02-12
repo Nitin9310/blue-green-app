@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
     // app/index.js
 res.send(`
     <body style="background-color: #e0ffe0; font-family: sans-serif;">
+       <h1>new vwersion</h1>
         <h1>🚀 Hello from the AUTOMATED Version!</h1>
         <p>This was deployed via GitHub Actions.</p>
         <p>Total shared visits: <b>${count}</b></p>
